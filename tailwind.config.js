@@ -28,7 +28,7 @@ module.exports = {
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.teal,
+        primary: colors.sky,
         gray: colors.neutral,
       },
       typography: (theme) => ({
@@ -36,7 +36,7 @@ module.exports = {
           css: {
             color: theme('colors.gray.700'),
             a: {
-              color: theme('colors.primary.500'),
+              color: theme('colors.primary.900'),
               '&:hover': {
                 color: `${theme('colors.primary.600')} !important`,
               },
@@ -64,7 +64,7 @@ module.exports = {
             },
             code: {
               color: theme('colors.pink.500'),
-              backgroundColor: theme('colors.gray.100'),
+              backgroundColor: theme('colors.gray.00'),
               paddingLeft: '4px',
               paddingRight: '4px',
               paddingTop: '2px',

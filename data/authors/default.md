@@ -1,16 +1,23 @@
 ---
-name: Tails Azimuth
+name: Don Stemen
 avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
+occupation: Professor Criminal Justice and Criminology
+company: Loyola University
 email: address@yoursite.com
-twitter: https://twitter.com/Twitter
+twitter: https://twitter.com/don_stemen
 linkedin: https://www.linkedin.com
 github: https://github.com
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
+# Project Goals
 
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
+The goal of the proposed project is to estimate the potential impact of the SAFE-T Act on bond
+court outcomes and pretrial release, pretrial detention and jail populations, and the lengths and
+costs of pretrial detention in Illinois using data from several local and state sources. Given the
+lack of data needed to fully estimate these impacts, the project will use existing statewide data to
+produce estimates for the statewide impact and supplement these data with more detailed
+information from five specific counties in Illinois.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+# About the Center
+
+The Center’s mission is to promote fair, informed, effective and ethical approaches to criminal justice policy and practice through collaborative interdisciplinary research and evaluation, professional leadership development, and targeted projects designed to bring about systemic improvements in Illinois’ criminal justice system. 

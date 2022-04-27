@@ -1,0 +1,50 @@
+---
+title: Estimating the Impact of the Pretrial Fairness Act
+date: '2022-4-27'
+tags: ['Pretrial Fairness Act', 'Arrest']
+draft: false
+summary: 'The Volume & Characteristics of Arrests Eligible for Detention'
+author: 'Branden DuPont'
+---
+
+# The Volume & Characteristics of Arrests Eligible for Detention
+
+## The Pretrial Fairness Act
+
+In January 2021, Illinois passed the Pretrial Fairness Act (PFA). The PFA fundamentally changes bond court practices and pretrial release in Illinois by abolishing cash bail, prohibiting pretrial detention for most defendants, creating new pretrial hearing processes, curtailing the conditions that may be placed on defendants released pretrial, and limiting revocation and modification of pretrial release.  
+The changes adopted in the PFA do not take effect until January 1, 2023. In order to provide Illinois’ criminal justice practitioners and policy makers with information prior to the effective date of the PFA, Loyola’s Center for Criminal Justice Research, with funding from Arnold Ventures, is producing a series of research briefs to provide context and insights for discussion of the potential impact of the law. By examining data from past practices, the goal of these research briefs is to estimate the potential impact of the PFA on future pretrial practices and outcomes.
+
+This research brief examines trends in the number of individuals arrested and eligible for detention under the PFA. The analyses were produced in collaboration with the Illinois Sentencing Policy Advisory Council (SPAC) using data from the Illinois State Police’s Criminal History Record Information (CHRI). These data include information for every individual arrested in Illinois from 2017 to 2021. Given the limited amount of statewide data in Illinois, understanding such trends in the volume and characteristics of defendants eligible for pretrial detention or supervision is a starting point to estimating and planning for the potential impact of the PFA. 
+Which Offenses Are Eligible for Detention under the PFA?
+
+Under the PFA there are two groups of individuals eligible for detention: 1) those eligible based on a “public safety” standard, and 2) those eligible based on a “willful flight” standard. The public safety standard allows for the pretrial detention of individuals charged with specific, detention-eligible offenses who are found to pose a risk to public safety.  The specific detention eligible offenses under this standard can broadly be categorized into three groups: 1) non-probationable forcible felonies and sex offenses, 2) weapon offenses (primarily illegal firearm possession), and 3) domestic violence offenses and violations of orders of protection. The willful flight standard allows for the pretrial detention of individuals shown to be a risk for willful flight from prosecution who are charged with either 1) a detention eligible offense under the public safety standard or 2) any Class 3 Felony or more serious felony offense. 
+
+## How Many Arrests Involve a Detention-Eligible Offense?
+
+To examine the volume of arrests for detention-eligible offenses, the analyses looked at two time periods: 2017-2019 (pre-COVID) and 2020-2021 (post-COVID). The average number of arrests for detention-eligible offenses under the public safety standard remained relatively stable: between 2017 and 2019, there were roughly 47,000 detention-eligible arrests per year, compared to approximately 44,000 detention-eligible arrests per year in 2020 and 2021. The number of arrests for detention-eligible offenses under the willful flight standard followed a similar trend, decreasing slightly from roughly 34,000 arrests per year to 26,000 arrests arrest per year. In contract, the number of arrests that included only non-detainable offenses decreased significantly, from roughly 170,000 arrests per year between 2017 and 2019 to approximately 90,000 arrests per year in 2020 and 2021. 
+ 
+As a result of these different trends, the proportion of all arrests that were detention-eligible under the public safety standard increased from 19% in 2017-2019 to 27% in 2020-2021. By comparison, the proportion of arrests that were detention-eligible under the willful flight standard remained stable at 15% to 17%. However, the proportion of arrests that included only non-detainable offenses decreased from 66% of arrests between 2017 and 2019 to 56% of arrests between 2020 and 2021.
+
+ 
+## What Are the Most Common Detention-Eligible Offenses?
+
+Roughly 12% of arrests for detention-eligible offenses under the public safety standard involved arrests for non-probationable forcible felonies and sex offenses; an additional 18% involved arrests for firearm possession offenses. The large majority of detention-eligible arrests – nearly 70% -- involved arrests for domestic violence offenses or violations of an order of protection. On an annual basis, that translates to almost 33,000 arrests for domestic violence across the state – arrests that would be eligible for pre-trial detention consideration. When similar analyses were performed for each individual judicial circuit in Illinois the same pattern was found: arrests for domestic violence offenses or violations of an order of protection accounted for the majority of detention-eligible arrests, ranging from 60% to 85% of all detention-eligible arrests across the circuits.
+
+ 
+When considering all arrests, just 3% involve arrests for non-probationable forcible felonies and sex offenses, just 4% involve arrests firearm possession offenses, and 15% involve arrests for domestic violence/violation of an order of protection. 
+ 
+What Are the Risks of New Charges and Failure to Appear (FTA) of Those Arrested?
+The Public Safety Assessment (PSA) provides criminal justice practitioners with information that can inform pretrial decisions, using current charge and criminal history to determine individuals’ risk of new criminal activity, new violent criminal activity, and failure to appear while on pretrial release.  Between 25% and 31% of defendants arrested for detention-eligible offenses under the public safety standard had an elevated risk for new criminal activity. However, 46% of those arrested for non-probationable forcible felonies/sex offenses and 58% of those arrested for domestic violence offenses had elevated risk for new violent criminal activity. Individuals arrested for firearm possession offenses had the lowest risk of new violent criminal activity – just 10% of defendants. For defendants eligible for detention under the public safety standard, just 9% to 13% had a high risk for failure to appear.
+Among individuals eligible for pretrial detention under the willful flight standard, roughly 18% of defendants had an elevated risk for failure to appear; however, the PSA does not distinguish between willful flight risk and the more broad failure to appear. Further, a relatively small portion of this group – 13% – had an elevated risk for new violent criminal activity.
+ 
+## Conclusion
+
+Each year, roughly 44,000 arrests occur in Illinois for offenses that are detention-eligible under the public safety standard of the PFA. Most of these arrests – 33,000 per year – are for domestic violence or violations of an order of protection. When public safety consideration is combined with willful flight consideration, roughly 37% of all arrests in Illinois are at least potentially eligible for a detention consideration, although given the relatively low risk for new violent criminal activity and low risk of FTA, only a portion of these cases will likely have a detention hearing sought and detention ultimately granted.
+
+
+
+### Methodology 
+
+
+ Using the Illinois State Police’s Criminal History Record Information (CHRI) data, SPAC identified every adult arrested in Illinois from 2017 to 2021. This resulted in the identification of roughly 1.1 million unique arrest events. For each of these arrest events, the data were then examined to determine if any of the arrest charges would be eligible for pretrial detention under the PFA’s “public safety standard.” Within the PFA there are specific crimes enumerated that, if charged, make an individual eligible to be petitioned by the county State’s Attorney for a detention hearing, and if a hearing is granted by the judge, to be held in detention pretrial. Loyola and SPAC identified roughly 400 specific statute references for these detainable offenses, and grouped them into three broad categories, including: 1) non-probationable forcible felonies and sex offenses, 2) weapon offenses (primarily illegal firearm possession crimes, and 3) domestic violence and violating an order of protection offenses.
+
