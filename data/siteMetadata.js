@@ -1,8 +1,8 @@
 const siteMetadata = {
   title: 'Loyola University of Chicago Center for Criminal Justice',
   author: 'Don Stemen',
-  headerTitle: 'SAFE-T Act',
-  description: 'Illinois SAFE-T Act Analysis',
+  headerTitle: 'Bond Court Reform',
+  description: 'Bond Court Reform Analysis',
   language: 'en-us',
   theme: 'light', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
