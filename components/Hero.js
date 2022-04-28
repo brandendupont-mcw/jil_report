@@ -23,7 +23,7 @@ const Statistic = () => {
                 </span>
               </h2>
               <p className="text-base text-gray-700 md:text-md">
-              In January 2021, the Illinois General Assembly passed House Bill 3653  – an omnibus crime bill known as the Safety, Accountability, Fairness and Equity Act that abolishes cash bail.
+              In January 2021, the Illinois General Assembly passed House Bill 3653  – an omnibus crime bill known as the Safety, Accountability, Fairness and Equity Act that most notably abolishes cash bail.
 
                <span className="px-1 py-1 mb-4 text-md font-bold text-maroon">
                 We're tracking how the law impacts bond court outcomes, pretrial, and jail population across Illinois.</span>
