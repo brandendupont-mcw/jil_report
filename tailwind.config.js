@@ -30,6 +30,7 @@ module.exports = {
       colors: {
         primary: colors.sky,
         gray: colors.neutral,
+        maroon: '#b32347',
       },
       typography: (theme) => ({
         DEFAULT: {

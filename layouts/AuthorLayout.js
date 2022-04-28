@@ -26,5 +26,5 @@ export default function AuthorLayout({ children, frontMatter }) {
         </div>
       </div>
     </>
-  )
+  ) 
 }
