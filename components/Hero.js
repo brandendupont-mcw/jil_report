@@ -37,7 +37,7 @@ const Statistic = () => {
               href="/about"
               
             >
-             <div className="inline-flex items-center text-md font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-maroon cursor-pointer">Learn more &#10141;</div> 
+             <div className="inline-flex items-center text-md font-semibold transition-colors hover:underline duration-200 text-deep-purple-accent-400 hover:text-maroon cursor-pointer">Learn more &#10141;</div> 
               </Link>
           
           </div>
