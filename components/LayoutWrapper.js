@@ -19,7 +19,7 @@ const LayoutWrapper = ({ children }) => {
                   <Logo />
                 </div>
                 {typeof siteMetadata.headerTitle === 'string' ? (
-                  <div className="h-10  hover:text-primary-500  text-black leading-tight text-3xl font-extrabold sm:block">
+                  <div className="h-10  hover:text-maroon  text-black leading-tight text-3xl font-extrabold sm:block">
                     LUC CCJ
                   </div>
                 ) : (
@@ -28,13 +28,13 @@ const LayoutWrapper = ({ children }) => {
               </div>
             </Link>
           </div>
-          <div className="flex items-center text-base leading-5">
+          <div className="flex items-center text-base leading-5 ">
             <div className="hidden sm:block">
               {headerNavLinks.map((link) => (
                 <Link
                   key={link.title}
                   href={link.href}
-                  className="p-1 font-medium text-gray-900 dark:text-gray-100 sm:p-4"
+                  className="p-1 font-medium hover:text-maroon text-gray-900 dark:text-gray-100 sm:p-4"
                 >
                   {link.title}
                 </Link>

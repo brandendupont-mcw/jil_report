@@ -4,10 +4,13 @@ import Link from 'next/link'
 
 
 const Statistic = () => {
+
+
+
     return (
-      <div className=" bg-gray-50  p-10 mb-32">
+      <div className=" bg-gray-50  p-10 mb-32 ">
         <div className="grid gap-5 row-gap-2 lg:grid-cols-2">
-          <div className="sm:ml-14 flex flex-col justify-center">
+          <div className="xl:ml-14 sm:ml-2 flex flex-col justify-center">
             <div className=" max-w-xl mb-6">
               <div>
                 <p className="inline-block px-3 py-2 mb-4 text-xs font-semibold tracking-wider text-white uppercase bg-maroon">
@@ -38,7 +41,7 @@ const Statistic = () => {
               </Link>
           
           </div>
-          <div className="sm:mt-4 hidden sm:block">
+          <div className="sm:mt-4 hidden lg:block">
          
           <Map />
           </div>

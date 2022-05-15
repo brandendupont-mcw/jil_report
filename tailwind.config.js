@@ -18,6 +18,10 @@ module.exports = {
       spacing: {
         '9/16': '56.25%',
       },
+        backgroundImage: {
+          'hero': "url('/static/images/squares.svg')",
+          'hero-graph': "url('/static/images/graph-paper.svg')",
+        },
       lineHeight: {
         11: '2.75rem',
         12: '3rem',
