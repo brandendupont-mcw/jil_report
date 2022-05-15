@@ -5,7 +5,7 @@ import Link from './Link'
 
 const Highlight7 = () => {
     return (
-        <div className="2xl:container 2xl:mx-auto lg:px-20 md:py-12 md:px-6 py-1 px-4 bg-hero mb-24">
+        <div className="2xl:container 2xl:mx-auto lg:px-20 md:py-20 md:px-6 py-12 px-4 bg-hero mb-24">
             <div className=" grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 lg:gap-20 gap-6 ">
                 {/* Safe Shopping Grid Card */}
                 <div className=" p-6 bg-gray-50 shadow-xs hover:shadow-lg hover:border-r-[9px] hover:border-b-[9px] border-black border-2 rounded-lg transition duration-300 ease-in-out hover:-translate-y-1 hover:translate-x-1  ">
