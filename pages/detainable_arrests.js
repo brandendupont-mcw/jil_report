@@ -31,7 +31,7 @@ export default function Home({ posts }) {
 
     // we can load data without much problem from an extenal source
     // this is not as fast as importing the data directly
-    const flights = aq.loadCSV('https://raw.githubusercontent.com/brandendupont/flat_retr/master/df_output.csv')
+    const flights = loadCSV('https://raw.githubusercontent.com/brandendupont-mcw/bond-court-reform/master/data/viz/risk.csv?token=GHSAT0AAAAAABPAN4HY27QS2HUZSHA3MW7WYUCUYZA')
 
     // this looks like this works
     const filteredData = data.filter(d => d.medal === 'gold')
@@ -43,6 +43,9 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <h1>
+          HI
+      </h1>
 
     </>
   )
