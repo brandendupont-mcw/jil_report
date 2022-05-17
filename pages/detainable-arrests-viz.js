@@ -57,33 +57,11 @@ export default function Home({ posts }) {
     {"Circuit":"23","Offense Type":"Weapon Offenses","Annual Cases":190,"FTA Risk":0.14,"NCA Risk":0.4},{"Circuit":"23","Offense Type":"Domestic Violence/VOOP","Annual Cases":3116,"FTA Risk":0.11,"NCA Risk":0.29},
     {"Circuit":"23","Offense Type":"Class 3 Felony or Greater","Annual Cases":1500,"FTA Risk":0.17,"NCA Risk":0.4},{"Circuit":"23","Offense Type":"Non-Detainable","Annual Cases":9820,"FTA Risk":null,"NCA Risk":null}]
 
-  async function fetchData() {
-    return(loadCSV('https://raw.githubusercontent.com/brandendupont-mcw/bond-court-reform/master/data/viz/risk.csv'))
-  }
+    const lastTest1 = [{'hi':'loading'}]
 
-  async function main() {
-    let abc = await fetchData();
-    const testData = abc.filter(d => d.Circuit === '23');
-    return testData.objects()
-  }
+    const [riskData, setRiskData] = useState(lastTest1);
 
-    const testArray = [{ "Non-Probationable Forcible Felony & Sex Offenses": 0.37, "Weapon Offenses": 0.4, "Domestic Violence/VOOP": 0.29, "Class 3 Felony or Greater": 0.4, "Non-Detainable": 0 }]
-
-    //const riskData = fromCSV('../data/viz/risk.csv')
-
-    const array1 = ["Non-Probationable Forcible Felony & Sex Offenses","Weapon Offenses","Domestic Violence/VOOP","Class 3 Felony or Greater","Non-Detainable"]
-
-    const array2 = Array(array1.length).fill('Offense Type');
-
-    const array3 =[0.37,0.4,0.29,0.4,0]
-
-    //console.log(array2)
-
-    //console.log(_.zipObject([ "Offense Type", "Offense Type", "Offense Type", "Offense Type", "Offense Type" ],array1))
-
-    const [riskData, setRiskData] = useState(lastTest);
-
-    const [circuit, setCircuit] = useState('Statewide');
+    const [circuitVal, setCircuit] = useState('Statewide');
 
     const data = table({
         country: ['USA', 'USA', 'Canada', 'Canada'],
@@ -95,39 +73,26 @@ export default function Home({ posts }) {
       useEffect(() => {
         (async () => {
           const users = await loadCSV('https://raw.githubusercontent.com/brandendupont-mcw/bond-court-reform/master/data/viz/risk.csv');
-          //console.log(users);
-          const testData = users.filter(d => d.Circuit === '19');
-          setRiskData(testData.objects());
-          //console.log(testData.objects())
+
+          const testData = users.params({ threshold: circuitVal }).filter(d => d.Circuit === threshold ); 
           
+          setRiskData(testData.objects());
+
         })();
       
         return () => {
           // this now gets called when the component unmounts
         };
-      }, []);
-
-    // we can load data without much problem from an extenal source
-    // this is not as fast as importing the data directly
-    //const riskData = loadCSV('https://raw.githubusercontent.com/brandendupont-mcw/bond-court-reform/master/data/viz/risk.csv')
+      }, [circuitVal]);
 
 
 
-    // this looks like this works
-    const filteredData =  data.filter(d => d.medal === 'gold') 
-    //console.log(typeof(riskData))
-    //const testData = riskData.filter(d => d.Circuit === 'gold')
 
 
-    const testAsync = main()
-    //const jsonTestAsync = JSON.stringify(testAsync)
 
-    //console.log(jsonTestAsync)
-
+    //const testData = users.filter(d => d.Circuit === circuitVal );
 
     const jsonTestAsync = JSON.parse(JSON.stringify(riskData))
-    console.log(typeof(jsonTestAsync))
-    console.log([lastTest === jsonTestAsync])
 
 
 
@@ -137,17 +102,24 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+
       
-      <h1>
-          HI
-      </h1>
+      <button className='bg-black text-white p-4' onClick={e => setCircuit( '10')}>
+            <h1>
+              HI
+          </h1>
+        </button>
+
+      
 
       <div className='w-full h-96'>
 
-
       <FirstBar data={jsonTestAsync} />
-
       </div>
+      <div className='w-full h-96'>
+
+<FirstBar data={jsonTestAsync} />
+</div>
 
     </>
   )

@@ -12,8 +12,7 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
     <ResponsiveBar
         data={data}
         keys={[
-            "FTA Risk",
-            "NCA Risk"
+            "FTA Risk"
         ]  }
         indexBy="Offense Type"
         margin={{ top: 50, right: 10, bottom: 50, left: 300 }}
