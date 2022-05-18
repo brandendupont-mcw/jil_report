@@ -74,6 +74,8 @@ export default function Home({ posts }) {
         (async () => {
           const users = await loadCSV('https://raw.githubusercontent.com/brandendupont-mcw/bond-court-reform/master/data/viz/risk.csv');
 
+          
+          // eslint-disable-line
           const testData = users.params({ threshold: circuitVal }).filter(d => d.Circuit === threshold ); 
           
           setRiskData(testData.objects());

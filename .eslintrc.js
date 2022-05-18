@@ -11,7 +11,9 @@ module.exports = {
     'prettier/prettier': 'off',
     'react/react-in-jsx-scope': 'off',
     'react/prop-types': 0,
-    'no-unused-vars': 0,
+    'no-unused-vars': 'off',
+    'no-undef': 'off',
     'react/no-unescaped-entities': 0,
+    
   },
 }
