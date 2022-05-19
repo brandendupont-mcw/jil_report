@@ -13,6 +13,8 @@
   },
   "dependencies": {
     "@fontsource/inter": "4.5.2",
+    "@headlessui/react": "^1.6.1",
+    "@heroicons/react": "^1.0.6",
     "@mailchimp/mailchimp_marketing": "^3.0.58",
     "@nivo/bar": "^0.79.1",
     "@nivo/core": "^0.79.0",

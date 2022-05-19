@@ -10,6 +10,7 @@ import { ResponsiveBar } from '@nivo/bar'
 const MyResponsiveBar = ({ data /* see data tab */ }) => (
 
     <ResponsiveBar
+        className="z-index-0"
         data={data}
         keys={[
             "FTA Risk"

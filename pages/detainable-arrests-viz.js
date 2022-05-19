@@ -7,6 +7,7 @@ import { aq, op, table, loadCSV, FileAttachment } from 'arquero';
 import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import _ from "lodash";
+import Select from '@/components/Select'  ;
 
 
 
@@ -59,9 +60,19 @@ export default function Home({ posts }) {
 
     const lastTest1 = [{'hi':'loading'}]
 
+    const people = [
+      { id: 1, name: 'Cook' },
+      { id: 2, name: '2' },
+      { id: 3, name: '3' }
+    ]
+
+
     const [riskData, setRiskData] = useState(lastTest1);
 
     const [circuitVal, setCircuit] = useState('Statewide');
+
+    const [selected, setSelected] = useState(people[0]);
+
 
     const data = table({
         country: ['USA', 'USA', 'Canada', 'Canada'],
@@ -76,7 +87,7 @@ export default function Home({ posts }) {
 
           
           // eslint-disable-line
-          const testData = users.params({ threshold: circuitVal }).filter(d => d.Circuit === threshold ); 
+          const testData = users.params({ threshold: selected['name'] }).filter(d => d.Circuit === threshold ); 
           
           setRiskData(testData.objects());
 
@@ -85,7 +96,7 @@ export default function Home({ posts }) {
         return () => {
           // this now gets called when the component unmounts
         };
-      }, [circuitVal]);
+      }, [selected]);
 
 
 
@@ -106,17 +117,19 @@ export default function Home({ posts }) {
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
 
       
+
+        <div className='h-32 p-4 mt-10'>
+      <Select selected={selected} setSelected={setSelected} />
+      </div>
+
       <button className='bg-black text-white p-4' onClick={e => setCircuit( '10')}>
             <h1>
               HI
           </h1>
         </button>
+      <div className='w-full h-96 z-index-0'>
 
-      
-
-      <div className='w-full h-96'>
-
-      <FirstBar data={jsonTestAsync} />
+      <FirstBar className="z-0" data={jsonTestAsync} />
       </div>
       <div className='w-full h-96'>
 
