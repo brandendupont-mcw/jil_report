@@ -3,31 +3,31 @@ import { Combobox, Transition } from '@headlessui/react'
 import { CheckIcon, SelectorIcon } from '@heroicons/react/solid'
 
 const people = [
-    { id: 1, name: 'Statewide' },
-    { id: 2, name: 'Cook' },
-    { id: 3, name: '1' },
-    { id: 4, name: '2' },
-    { id: 5, name: '3' },
-    { id: 6, name: '4' },
-    { id: 7, name: '5' },
-    { id: 8, name: '6' },
-    { id: 9, name: '7' },
-    { id: 10, name: '8' },
-    { id: 11, name: '9' },
-    { id: 12, name: '10' },
-    { id: 13, name: '11' },
-    { id: 14, name: '12' },
-    { id: 15, name: '13' },
-    { id: 16, name: '14' },
-    { id: 17, name: '15' },
-    { id: 18, name: '16' },
-    { id: 19, name: '17' },
-    { id: 20, name: '18' },
-    { id: 21, name: '19' },
-    { id: 22, name: '20' },
-    { id: 23, name: '21' },
-    { id: 24, name: '22' },
-    { id: 25, name: '23' }
+    { id: 'Statewide', name: 'Statewide' },
+    { id: 'Cook', name: 'Cook' },
+    { id: '1', name: 'Circuit 1' },
+    { id: '2', name: 'Circuit 2' },
+    { id: '3', name: 'Circuit 3' },
+    { id: '4', name: 'Circuit 4' },
+    { id: '5', name: 'Circuit 5' },
+    { id: '6', name: 'Circuit 6' },
+    { id: '7', name: 'Circuit 7' },
+    { id: '8', name: 'Circuit 8' },
+    { id: '9', name: 'Circuit 9' },
+    { id: '10', name: 'Circuit 10' },
+    { id: '11', name: 'Circuit 11' },
+    { id: '12', name: 'Circuit 12' },
+    { id: '13', name: 'Circuit 13' },
+    { id: '14', name: 'Circuit 14' },
+    { id: '15', name: 'Circuit 15' },
+    { id: '16', name: 'Circuit 16' },
+    { id: '17', name: 'Circuit 17' },
+    { id: '18', name: 'Circuit 18' },
+    { id: '19', name: 'Circuit 19' },
+    { id: '20', name: 'Circuit 20' },
+    { id: '21', name: 'Circuit 21' },
+    { id: '22', name: 'Circuit 22' },
+    { id: '23', name: 'Circuit 23' }
   ]
 
 function Select({selected, setSelected}) {
@@ -50,9 +50,9 @@ function Select({selected, setSelected}) {
     <div className=" z-100 w-48">
       <Combobox value={selected} onChange={setSelected} >
         <div className="relative mt-1">
-          <div className="relative w-full cursor-default overscroll-none   rounded-lg bg-white text-left border-black focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2 focus-visible:ring-offset-teal-300 sm:text-sm">
+          <div className="relative w-full cursor-default overscroll-none    bg-white text-left border-black border-b-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2  sm:text-sm">
             <Combobox.Input
-              className="w-full bg-gray-100 border-none py-2 pl-3 pr-10 text-sm leading-5 text-gray-900 focus:ring-0"
+              className="w-full border-none hover:border-b-2  text-xl text-maroon font-extrabold  text-gray-900 focus:ring-0"
               displayValue={(person) => person.name}
               onChange={(event) => setQuery(event.target.value)}
               horizontal

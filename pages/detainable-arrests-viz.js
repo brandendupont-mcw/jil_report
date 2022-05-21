@@ -8,7 +8,7 @@ import React, { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import _ from "lodash";
 import Select from '@/components/Select'  ;
-
+import VizHeader from '@/components/VizHeader.js'
 
 
 const FirstBar = dynamic(
@@ -61,7 +61,7 @@ export default function Home({ posts }) {
     const lastTest1 = [{'hi':'loading'}]
 
     const people = [
-      { id: 1, name: 'Cook' },
+      { id: 'Statewide', name: 'Statewide' },
       { id: 2, name: '2' },
       { id: 3, name: '3' }
     ]
@@ -87,7 +87,7 @@ export default function Home({ posts }) {
 
           
           // eslint-disable-line
-          const testData = users.params({ threshold: selected['name'] }).filter(d => d.Circuit === threshold ); 
+          const testData = users.params({ threshold: selected['id'] }).filter(d => d.Circuit === threshold ); 
           
           setRiskData(testData.objects());
 
@@ -115,11 +115,15 @@ export default function Home({ posts }) {
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
+      <VizHeader />
 
       
 
         <div className='h-32 p-4 mt-10'>
+          <div className='flex flex-row gap-1 sm:gap-2'>
+          <h3 className='text-xl mt-3 font-extrabold '>Select Detainable Arrests By</h3>
       <Select selected={selected} setSelected={setSelected} />
+      </div>
       </div>
 
       <button className='bg-black text-white p-4' onClick={e => setCircuit( '10')}>
