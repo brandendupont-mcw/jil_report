@@ -52,7 +52,7 @@ function Select({selected, setSelected}) {
         <div className="relative mt-1">
           <div className="relative w-full cursor-default overscroll-none    bg-white text-left border-black border-b-2 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75 focus-visible:ring-offset-2  sm:text-sm">
             <Combobox.Input
-              className="w-full border-none hover:border-b-2  text-xl text-maroon font-extrabold  text-gray-900 focus:ring-0"
+              className="w-full border-none hover:border-b-2  sm:text-xl text-lg text-maroon font-extrabold  text-gray-900 focus:ring-0"
               displayValue={(person) => person.name}
               onChange={(event) => setQuery(event.target.value)}
               horizontal
@@ -71,7 +71,7 @@ function Select({selected, setSelected}) {
             leaveTo="opacity-0"
             afterLeave={() => setQuery('')}
           >
-            <Combobox.Options className="mt-1 max-h-32 w-full overflow-y-auto rounded-md bg-gray-100 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm">
+            <Combobox.Options className="mt-1 max-h-32 w-full overflow-y-auto rounded-md bg-gray-100 py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm ">
               {filteredPeople.length === 0 && query !== '' ? (
                 <div className="relative cursor-default select-none py-2 px-4 text-gray-700">
                   Nothing found.

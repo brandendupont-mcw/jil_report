@@ -18,7 +18,7 @@ const vizHeader = () => {
               The Volume and Characteristics of <span className="text-maroon">Arrests</span> Eligible for Detention.
               </h2>
               <p className="text-base max-w-2xl text-gray-700 md:text-md">
-              The PFA prohibits pretrial detention for most individuals arrested in Illinois. There are just 79 offenses that are detainable under the public safety standard.   Historical trends can be used to understand how the PFA's impact on detainable arrests.
+              The PFA prohibits pretrial detention for most individuals arrested in Illinois. There are only 79 offenses that are detainable under the public safety standard.  Historical trends can be used to understand how the PFA's impact on detainable arrests.
               </p>
 
               <p className="text-base max-w-2xl mt-4 text-gray-700 md:text-md mb-10">
