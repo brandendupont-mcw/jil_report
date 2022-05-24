@@ -14,7 +14,7 @@ const vizHeader = () => {
             <div className=" max-w-4xl mb-6">
               <div>
               </div>
-              <h2 className="max-w-2xl mb-6 font-sans text-4xl font-bold  text-black sm:text-4xl sm:leading-none">
+              <h2 className="max-w-2xl mb-6 font-sans text-3xl font-bold  text-black sm:text-4xl sm:leading-none">
               The Volume and Characteristics of <span className="text-maroon">Arrests</span> Eligible for Detention.
               </h2>
               <p className="text-base max-w-2xl text-gray-700 md:text-md">
