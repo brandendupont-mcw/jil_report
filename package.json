@@ -18,6 +18,7 @@
     "@mailchimp/mailchimp_marketing": "^3.0.58",
     "@nivo/bar": "^0.79.1",
     "@nivo/core": "^0.79.0",
+    "@nivo/pie": "^0.79.1",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.5.0",
     "arquero": "^4.8.8",

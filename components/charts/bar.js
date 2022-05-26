@@ -1,27 +1,33 @@
 // install (please make sure versions match peerDependencies)
 // yarn add @nivo/core @nivo/bar
 import { ResponsiveBar } from '@nivo/bar'
+import { patternDotsDef } from '@nivo/core'
 
 // make sure parent container have a defined height when using
 // responsive component, otherwise height will be 0 and
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
-const MyResponsiveBar = ({ data /* see data tab */ }) => (
+const MyResponsiveBar = ({ data, marginObject, keyArray /* see data tab */ }) => (
 
     <ResponsiveBar
         className="z-index-0"
         data={data}
-        keys={[
-            "FTA Risk"
-        ]  }
+        keys={keyArray}
         indexBy="Offense Type"
-        margin={{ top: 50, right: 10, bottom: 50, left: 300 }}
+        margin={marginObject}
         padding={0.3}
         layout="horizontal"
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
-        colors={{ scheme: 'nivo' }}
+        colors={'#212121'}
+        tooltip={({ id,data, value, color }) => (
+            <div className="bg-white text-xs p-2 border-black border-2 shadow-md max-w-[150px] ">
+                <strong  >{data['Offense Type']} NCA Risk is</strong> <strong style={{"color":'#b32347'}}>{value}</strong> 
+                .
+                </div>
+
+        )}
         defs={[
             {
                 id: 'dots',
@@ -45,7 +51,7 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
         fill={[
             {
                 match: {
-                    id: 'fries'
+                    id: 'FTA'
                 },
                 id: 'dots'
             },
@@ -68,20 +74,12 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
         axisTop={null}
         axisRight={null}
         axisBottom={{
-            tickSize: 5,
-            tickPadding: 5,
+            tickSize: 0,
+            tickPadding: 0,
             tickRotation: 0,
-            legend: 'country',
+            legend: 'Risk of New Criminal Activity',
             legendPosition: 'middle',
             legendOffset: 32
-        }}
-        axisLeft={{
-            tickSize: 5,
-            tickPadding: 5,
-            tickRotation: 0,
-            legend: 'food',
-            legendPosition: 'middle',
-            legendOffset: -40
         }}
         labelSkipWidth={12}
         labelSkipHeight={12}
@@ -89,8 +87,8 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
             from: 'color',
             modifiers: [
                 [
-                    'darker',
-                    1.6
+                    'brighter',
+                    20
                 ]
             ]
         }}
@@ -103,7 +101,7 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
                 translateX: 120,
                 translateY: 0,
                 itemsSpacing: 2,
-                itemWidth: 100,
+                itemWidth: 50,
                 itemHeight: 20,
                 itemDirection: 'left-to-right',
                 itemOpacity: 0.85,
@@ -120,6 +118,7 @@ const MyResponsiveBar = ({ data /* see data tab */ }) => (
         ]}
         role="application"
         ariaLabel="Nivo bar chart demo"
+        
         //barAriaLabel={function(e){return e.id+": "+e.formattedValue+" in country: "+e.indexValue}}
     />
 );

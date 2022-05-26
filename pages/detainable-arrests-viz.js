@@ -9,12 +9,17 @@ import dynamic from 'next/dynamic';
 import _ from "lodash";
 import Select from '@/components/Select'  ;
 import VizHeader from '@/components/VizHeader.js'
-
+import MyResponsivePie from '@/components/charts/pie'
 
 const FirstBar = dynamic(
     () => import('@/components/charts/bar'),
     { ssr: false }
   );
+
+const FirstPie = dynamic(
+  () => import('@/components/charts/pie'),
+  { ssr: false }
+);
 
 //import risk from '../data/viz/risk.csv'
 
@@ -22,6 +27,8 @@ const FirstBar = dynamic(
 
 
 import NewsletterForm from '@/components/NewsletterForm'
+
+
 
 const MAX_DISPLAY = 5
 
@@ -31,6 +38,9 @@ export async function getStaticProps() {
 
   return { props: { posts } }
 }
+
+
+
 
 export default function Home({ posts }) {
 
@@ -54,11 +64,22 @@ export default function Home({ posts }) {
 
     ]
 
-    const lastTest = [{"Circuit":"23","Offense Type":"Non-Probationable Forcible Felony & Sex Offenses","Annual Cases":333,"FTA Risk":0.12,"NCA Risk":0.37},
-    {"Circuit":"23","Offense Type":"Weapon Offenses","Annual Cases":190,"FTA Risk":0.14,"NCA Risk":0.4},{"Circuit":"23","Offense Type":"Domestic Violence/VOOP","Annual Cases":3116,"FTA Risk":0.11,"NCA Risk":0.29},
-    {"Circuit":"23","Offense Type":"Class 3 Felony or Greater","Annual Cases":1500,"FTA Risk":0.17,"NCA Risk":0.4},{"Circuit":"23","Offense Type":"Non-Detainable","Annual Cases":9820,"FTA Risk":null,"NCA Risk":null}]
 
     const lastTest1 = [{'hi':'loading'}]
+
+    const pieData = [
+      {
+        "id": "Percent Black",
+        "label": "% Black",
+        "value": 83,
+  
+      },
+      {
+        "id": "Percent Other",
+        "label": "% Other",
+        "value": 17,
+      }
+    ]
 
     const people = [
       { id: 'Statewide', name: 'Statewide' },
@@ -88,7 +109,9 @@ export default function Home({ posts }) {
           
           // eslint-disable-line
           const testData = users.params({ threshold: selected['id'] }).filter(d => d.Circuit === threshold ); 
+          // risk data
           
+
           setRiskData(testData.objects());
 
         })();
@@ -107,6 +130,8 @@ export default function Home({ posts }) {
 
     const jsonTestAsync = JSON.parse(JSON.stringify(riskData))
 
+    console.log(jsonTestAsync);
+
 
 
 
@@ -122,23 +147,42 @@ export default function Home({ posts }) {
         <div className='h-32 p-4 mt-10'>
           <div className='flex flex-row gap-1 sm:gap-2'>
           <h3 className='text-xl mt-3 font-extrabold '>Select Detainable Arrests By</h3>
-      <Select selected={selected} setSelected={setSelected} />
+      <Select  selected={selected} setSelected={setSelected} />
       </div>
       </div>
+      <div className="mb-12"></div>
 
-      <button className='bg-black text-white p-4' onClick={e => setCircuit( '10')}>
-            <h1>
-              HI
+      <div  style={{height:"80px", width:"140px"}} className="ml-2"> 
+                            
+                            <div className="pt-2"></div>
+                                              </div>
+                    
+
+      <div className="mb-4 ">
+          <h1 className="text-2xl font-extrabold  tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:text-2xl md:leading-14">
+            Risk Level of Individuals Arrested
           </h1>
-        </button>
-      <div className='w-full h-96 z-index-0'>
+          <div className="text-md text-gray-700 max-w-sm  ">Percent of individuals arrested with a risk of new criminal activity or failure to appear</div>
+          <hr className='max-w-sm mb-6 mt-4'></hr>
+          </div>
+         
 
-      <FirstBar className="z-0" data={jsonTestAsync} />
+      <div className='grid gap-10 grid-cols-2 '>
+      <span className=' h-[250px] '>
+      <div className="text-lg leading-7 text-gray-700 ml-[210px]">Risk of New Criminal Activity</div>
+            <FirstBar className="z-0" data={jsonTestAsync} keyArray={["NCA Risk"]} indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 300 }} />
+            </span>
+            
+    
+            
+      <span className=' w-[212px] h-[250px] z-index-0 mb-10'>
+      <div className="text-lg leading-7 text-gray-700">Risk of Failure to Appear</div>
+          <FirstBar className="z-0" data={jsonTestAsync} keyArray={["FTA Risk"]} indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 10 }} />
+          </span>
       </div>
-      <div className='w-full h-96'>
 
-<FirstBar data={jsonTestAsync} />
-</div>
+      <hr></hr>
+
 
     </>
   )
