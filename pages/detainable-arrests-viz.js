@@ -187,8 +187,8 @@ export default function Home({ posts }) {
 
           <span className='ml-40 w-[212px] h-[250px] z-index-0 mb-10'>
       <div className="text-lg leading-7 text-gray-700">Risk of Failure to Appear</div>
-          <FirstBar className="z-0" data={jsonAnn} keyArray={["Annual Cases", "Offense Type"]}
-           indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 10 }}
+          <FirstBar className="z-0" data={jsonAnn} keyArray={["Offense Type"]}
+           indexArray={"Year"} marginObject={{ top: 0, right: 0, bottom: 0, left: 10 }}
            layoutVal={"vertical"} />
           </span>
       </div>
