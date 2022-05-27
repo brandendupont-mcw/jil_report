@@ -69,15 +69,15 @@ export default function Home({ posts }) {
 
     const pieData = [
       {
-        "id": "Percent Black",
-        "label": "% Black",
+        "id": "Non-Probationable Forcible Felony & Sex Offenses",
+
         "value": 83,
   
       },
       {
-        "id": "Percent Other",
-        "label": "% Other",
-        "value": 17,
+        "id": "Class 3 Felony or Greater",
+
+        "value": 83,
       }
     ]
 
@@ -156,6 +156,31 @@ export default function Home({ posts }) {
                             
                             <div className="pt-2"></div>
                                               </div>
+
+                                                    <div className="mb-4 ">
+          <h1 className="text-2xl font-extrabold  tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:text-2xl md:leading-14">
+            Risk Level of Individuals Arrested
+          </h1>
+          <div className="text-md text-gray-700 max-w-sm  ">Percent of individuals arrested with a risk of new criminal activity or failure to appear</div>
+          <hr className='max-w-sm mb-6 mt-4'></hr>
+          </div>
+         
+    
+      <div className='grid gap-10 grid-cols-2 '>
+      <span className=' h-[250px] '>
+      <div className="text-lg leading-7 text-gray-700 ml-[210px]">Risk of New Criminal Activity</div>
+            <FirstPie data={pieData} />
+            </span>
+            
+    
+            
+      <span className=' w-[212px] h-[250px] z-index-0 mb-10'>
+      <div className="text-lg leading-7 text-gray-700">Risk of Failure to Appear</div>
+          <FirstBar className="z-0" data={jsonTestAsync} keyArray={["FTA Risk"]} indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 10 }} />
+          </span>
+      </div>
+
+      <hr></hr>
                     
 
       <div className="mb-4 ">
@@ -166,7 +191,7 @@ export default function Home({ posts }) {
           <hr className='max-w-sm mb-6 mt-4'></hr>
           </div>
          
-
+    
       <div className='grid gap-10 grid-cols-2 '>
       <span className=' h-[250px] '>
       <div className="text-lg leading-7 text-gray-700 ml-[210px]">Risk of New Criminal Activity</div>
