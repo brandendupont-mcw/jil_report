@@ -34,7 +34,7 @@ const CenteredMetric = ({ dataWithArc, centerX, centerY }) => {
 const MyResponsivePie = ({ data /* see data tab */ }) => (
     <ResponsivePie
         data={data}
-        margin={{ top:5, right:10, bottom:0, left: 10}}
+        margin={{ top:0, right:175, bottom:0, left: 250}}
         startAngle={-180}
         innerRadius={0.75}
         padAngle={0.3}
@@ -48,12 +48,11 @@ const MyResponsivePie = ({ data /* see data tab */ }) => (
         arcLinkLabelsThickness={2}
         arcLinkLabelsColor={{ from: 'color' }}
         arcLabelsSkipAngle={10}
-        enableArcLinkLabels={false}
+        enableArcLinkLabels={true}
         arcLabelsTextColor={{ from: 'color', modifiers: [ [ 'brighter', 10 ] ] }}
-        colors={["#dc267b", "#1f1f1f"]}
+        colors={['#dae2e3','#02aeff','#ffc413','#005ada','#212121']}
         enableArcLabels={false}
         arcLinkLabel={d => `${d.id} (${d.formattedValue})`}
-
         
     />
 )

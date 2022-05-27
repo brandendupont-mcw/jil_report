@@ -67,7 +67,7 @@ export default function Home({ posts }) {
 
     const lastTest1 = [{'hi':'loading'}]
 
-    const pieData = [
+    const pieData2 = [
       {
         "id": "Non-Probationable Forcible Felony & Sex Offenses",
 
@@ -89,8 +89,9 @@ export default function Home({ posts }) {
 
 
     const [riskData, setRiskData] = useState(lastTest1);
+    const [pieData, setPieData] = useState(lastTest1);
 
-    const [circuitVal, setCircuit] = useState('Statewide');
+    const [annData, setAnnData] = useState(lastTest1);
 
     const [selected, setSelected] = useState(people[0]);
 
@@ -105,14 +106,20 @@ export default function Home({ posts }) {
       useEffect(() => {
         (async () => {
           const users = await loadCSV('https://raw.githubusercontent.com/brandendupont-mcw/bond-court-reform/master/data/viz/risk.csv');
+          const pie = await loadCSV('https://raw.githubusercontent.com/brandendupont-mcw/bond-court-reform/master/data/viz/pie.csv');
+          const ann = await loadCSV('https://raw.githubusercontent.com/brandendupont-mcw/bond-court-reform/master/data/viz/ann.csv');
 
           
           // eslint-disable-line
           const testData = users.params({ threshold: selected['id'] }).filter(d => d.Circuit === threshold ); 
+          const filterPie = pie.params({ threshold: selected['id'] }).filter(d => d.Circuit === threshold ); 
+          const filterAnn = ann.params({ threshold: selected['id'] }).filter(d => d.Circuit === threshold ); 
           // risk data
           
 
           setRiskData(testData.objects());
+          setPieData(filterPie.objects());
+          setAnnData(filterAnn.objects());
 
         })();
       
@@ -128,9 +135,12 @@ export default function Home({ posts }) {
 
     //const testData = users.filter(d => d.Circuit === circuitVal );
 
-    const jsonTestAsync = JSON.parse(JSON.stringify(riskData))
+    const jsonTestAsync = JSON.parse(JSON.stringify(riskData));
+    const jsonPie = JSON.parse(JSON.stringify(pieData));
+    const jsonAnn = JSON.parse(JSON.stringify(annData));
+    console.log(jsonAnn);
 
-    console.log(jsonTestAsync);
+
 
 
 
@@ -144,13 +154,13 @@ export default function Home({ posts }) {
 
       
 
-        <div className='h-32 p-4 mt-10'>
+        <div className='h-32 p-4 mt-10 sticky top-0 bg-white'>
           <div className='flex flex-row gap-1 sm:gap-2'>
-          <h3 className='text-xl mt-3 font-extrabold '>Select Detainable Arrests By</h3>
+          <h3 className='text-xl mt-3 font-extrabold'>Select Detainable Arrests By</h3>
       <Select  selected={selected} setSelected={setSelected} />
       </div>
       </div>
-      <div className="mb-12"></div>
+      <div className="mb-4"></div>
 
       <div  style={{height:"80px", width:"140px"}} className="ml-2"> 
                             
@@ -167,16 +177,19 @@ export default function Home({ posts }) {
          
     
       <div className='grid gap-10 grid-cols-2 '>
-      <span className=' h-[250px] '>
-      <div className="text-lg leading-7 text-gray-700 ml-[210px]">Risk of New Criminal Activity</div>
-            <FirstPie data={pieData} />
-            </span>
             
     
             
-      <span className=' w-[212px] h-[250px] z-index-0 mb-10'>
+      <span className=' w-[650px] h-[300px] z-index-0 mb-10'>
       <div className="text-lg leading-7 text-gray-700">Risk of Failure to Appear</div>
-          <FirstBar className="z-0" data={jsonTestAsync} keyArray={["FTA Risk"]} indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 10 }} />
+      <FirstPie data={jsonPie}  />
+          </span>
+
+          <span className='ml-40 w-[212px] h-[250px] z-index-0 mb-10'>
+      <div className="text-lg leading-7 text-gray-700">Risk of Failure to Appear</div>
+          <FirstBar className="z-0" data={jsonAnn} keyArray={["Annual Cases", "Offense Type"]}
+           indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 10 }}
+           layoutVal={"vertical"} />
           </span>
       </div>
 
@@ -195,14 +208,16 @@ export default function Home({ posts }) {
       <div className='grid gap-10 grid-cols-2 '>
       <span className=' h-[250px] '>
       <div className="text-lg leading-7 text-gray-700 ml-[210px]">Risk of New Criminal Activity</div>
-            <FirstBar className="z-0" data={jsonTestAsync} keyArray={["NCA Risk"]} indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 300 }} />
+            <FirstBar className="z-0" data={jsonTestAsync} keyArray={["NCA Risk"]}
+             indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 300 }}
+             layoutVal={"horizontal"} />
             </span>
             
     
             
       <span className=' w-[212px] h-[250px] z-index-0 mb-10'>
       <div className="text-lg leading-7 text-gray-700">Risk of Failure to Appear</div>
-          <FirstBar className="z-0" data={jsonTestAsync} keyArray={["FTA Risk"]} indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 10 }} />
+          <FirstBar className="z-0" data={jsonTestAsync} keyArray={["FTA Risk"]} indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 10 }} layoutVal={"horizontal"}/>
           </span>
       </div>
 
