@@ -9,7 +9,6 @@ import dynamic from 'next/dynamic';
 import _ from "lodash";
 import Select from '@/components/Select'  ;
 import VizHeader from '@/components/VizHeader.js'
-import MyResponsivePie from '@/components/charts/pie'
 
 const FirstBar = dynamic(
     () => import('@/components/charts/bar'),
@@ -20,6 +19,7 @@ const FirstPie = dynamic(
   () => import('@/components/charts/pie'),
   { ssr: false }
 );
+
 
 //import risk from '../data/viz/risk.csv'
 
@@ -187,9 +187,11 @@ export default function Home({ posts }) {
 
           <span className='ml-40 w-[212px] h-[250px] z-index-0 mb-10'>
       <div className="text-lg leading-7 text-gray-700">Risk of Failure to Appear</div>
-          <FirstBar className="z-0" data={jsonAnn} keyArray={["Offense Type"]}
+          <FirstBar className="z-0" data={jsonAnn} keyArray={["Detainable - Public Safety", "Detainable - Willful Flight","Non-detainable"]}
            indexArray={"Year"} marginObject={{ top: 0, right: 0, bottom: 0, left: 10 }}
-           layoutVal={"vertical"} />
+           layoutVal={"vertical"}
+           colorArray={['#ffc413','#02aeff','#212121']}
+            />
           </span>
       </div>
 
@@ -209,7 +211,7 @@ export default function Home({ posts }) {
       <span className=' h-[250px] '>
       <div className="text-lg leading-7 text-gray-700 ml-[210px]">Risk of New Criminal Activity</div>
             <FirstBar className="z-0" data={jsonTestAsync} keyArray={["NCA Risk"]}
-             indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 300 }}
+             indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 300 }} colorArray={['#212121']}
              layoutVal={"horizontal"} />
             </span>
             
@@ -217,7 +219,7 @@ export default function Home({ posts }) {
             
       <span className=' w-[212px] h-[250px] z-index-0 mb-10'>
       <div className="text-lg leading-7 text-gray-700">Risk of Failure to Appear</div>
-          <FirstBar className="z-0" data={jsonTestAsync} keyArray={["FTA Risk"]} indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 10 }} layoutVal={"horizontal"}/>
+          <FirstBar className="z-0" data={jsonTestAsync} keyArray={["FTA Risk"]} indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 10 }} layoutVal={"horizontal"} colorArray={['#212121']}/>
           </span>
       </div>
 
