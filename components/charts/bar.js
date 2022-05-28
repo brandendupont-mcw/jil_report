@@ -8,7 +8,7 @@ import { patternDotsDef } from '@nivo/core'
 // no chart will be rendered.
 // website examples showcase many properties,
 // you'll often use just a few of them.
-const MyResponsiveBar = ({ data, marginObject, keyArray, indexArray, layoutVal, colorArray /* see data tab */ }) => (
+const MyResponsiveBar = ({ data, marginObject, keyArray, indexArray, layoutVal, colorArray, valueFormatString /* see data tab */ }) => (
 
     <ResponsiveBar
         className="z-index-0"
@@ -21,7 +21,7 @@ const MyResponsiveBar = ({ data, marginObject, keyArray, indexArray, layoutVal, 
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
         colors={colorArray}
-        valueFormat=" >-0.1~%"
+        valueFormat={valueFormatString}
         defs={[
             {
                 id: 'dots',
