@@ -21,6 +21,7 @@ const MyResponsiveBar = ({ data, marginObject, keyArray, indexArray, layoutVal, 
         valueScale={{ type: 'linear' }}
         indexScale={{ type: 'band', round: true }}
         colors={colorArray}
+        valueFormat=" >-0.1~%"
         defs={[
             {
                 id: 'dots',
