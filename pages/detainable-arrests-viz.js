@@ -169,7 +169,7 @@ export default function Home({ posts }) {
 
                                                     <div className="mb-4 ">
           <h1 className="text-2xl font-extrabold  tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:text-2xl md:leading-14">
-            Risk Level of Individuals Arrested
+            Annual Number of Arrests
           </h1>
           <div className="text-md text-gray-700 max-w-sm  ">Percent of individuals arrested with a risk of new criminal activity or failure to appear</div>
           <hr className='max-w-sm mb-6 mt-4'></hr>
