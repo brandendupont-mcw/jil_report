@@ -10,6 +10,8 @@ import { patternDotsDef } from '@nivo/core'
 // you'll often use just a few of them.
 const MyResponsiveBar = ({ data, marginObject, keyArray, indexArray, layoutVal, colorArray, valueFormatString /* see data tab */ }) => (
 
+
+
     <ResponsiveBar
         className="z-index-0"
         data={data}

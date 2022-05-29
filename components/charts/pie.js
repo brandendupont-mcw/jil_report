@@ -31,10 +31,10 @@ const CenteredMetric = ({ dataWithArc, centerX, centerY }) => {
     )
 }
 
-const MyResponsivePie = ({ data /* see data tab */ }) => (
+const MyResponsivePie = ({ data,  /* see data tab */ }) => (
     <ResponsivePie
         data={data}
-        margin={{ top:0, right:175, bottom:0, left: 250}}
+        margin={{ top:0, right:185, bottom:0, left: 260}}
         startAngle={-180}
         innerRadius={0.75}
         padAngle={0.3}
@@ -54,6 +54,20 @@ const MyResponsivePie = ({ data /* see data tab */ }) => (
         enableArcLabels={false}
         arcLinkLabel={d => `${d.id} (${d.formattedValue})`}
         valueFormat=">-,"
+        legends={[
+            {
+                anchor: 'top-left',
+                direction: 'column',
+                justify: false,
+                translateX: -250,
+                translateY: -2,
+                itemWidth: 100,
+                itemHeight: 12,
+                itemsSpacing: 0,
+                symbolSize: 10,
+                itemDirection: 'left-to-right'
+            }
+        ]}
         
     />
 )

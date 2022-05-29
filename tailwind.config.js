@@ -32,7 +32,7 @@ module.exports = {
         sans: ['InterVariable', ...defaultTheme.fontFamily.sans],
       },
       colors: {
-        primary: colors.sky,
+        primary: colors.blue,
         gray: colors.neutral,
         maroon: '#b32347',
       },

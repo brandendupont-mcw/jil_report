@@ -141,13 +141,13 @@ export default function Home({ posts }) {
     const jsonTestAsync = JSON.parse(JSON.stringify(riskData));
     const jsonPie = JSON.parse(JSON.stringify(pieData));
     const jsonAnn = JSON.parse(JSON.stringify(annData));
-    console.log(jsonAnn);
+
 
 
   const percVal = ['Detainable - Public Safety %','Detainable - Willful Flight %','Non-detainable %']
 
 
-
+      console.log(selected['id'])
 
 
 
@@ -158,7 +158,7 @@ export default function Home({ posts }) {
 
       
 
-        <div className='h-32 p-4 mt-10 sticky top-0 bg-white'>
+        <div className='h-32 p-4 mt-10  bg-white'>
           <div className='flex flex-row gap-1 sm:gap-2'>
           <h3 className='text-xl mt-3 font-extrabold'>Select Detainable Arrests By</h3>
       <Select  selected={selected} setSelected={setSelected} />
@@ -172,19 +172,21 @@ export default function Home({ posts }) {
                                               </div>
 
                                                     <div className="mb-4 ">
+                                                      <span className='flex flew-row gap-1'>
           <h1 className="text-2xl font-extrabold  tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:text-2xl md:leading-14">
-            Detainable Arrests
+          Detainable Arrests for <span className=''>{selected['name']}</span> 
           </h1>
+          </span>
           <hr className='max-w-sm mb-6 mt-4'></hr>
           </div>
          
     
-      <div className='grid gap-10 grid-cols-2 overflow-auto'>
+      <div className='grid gap-10 grid-cols-2'>
             
     
             
       <span className=' w-[650px] h-[300px]  z-index-0 mb-10 '>
-      <div className="text-lg leading-7 text-gray-700 ml-[250px]">Detainable Arrests by Offense</div>
+      <div className="text-lg leading-7 text-gray-700 ml-[260px] mb-2">Detainable Arrests by Offense</div>
       <FirstPie data={jsonPie}  />
           </span>
 
