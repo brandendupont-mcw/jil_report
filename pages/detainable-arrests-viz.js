@@ -160,7 +160,7 @@ export default function Home({ posts }) {
 
         <div className='h-32 p-4 mt-10  bg-white'>
           <div className='flex flex-row gap-1 sm:gap-2'>
-          <h3 className='text-xl mt-3 font-extrabold'>Select Detainable Arrests By</h3>
+          <h3 className='text-xl mt-3 font-extrabold'>Select Detainable Arrests:</h3>
       <Select  selected={selected} setSelected={setSelected} />
       </div>
       </div>
@@ -174,7 +174,7 @@ export default function Home({ posts }) {
                                                     <div className="mb-4 ">
                                                       <span className='flex flew-row gap-1'>
           <h1 className="text-2xl font-extrabold  tracking-tight text-gray-900 dark:text-gray-100 sm:leading-10 md:text-2xl md:leading-14">
-          Detainable Arrests for <span className=''>{selected['name']}</span> 
+          Detainable Arrests for <span className='border-b-2 border-maroon'>{selected['name']}</span> 
           </h1>
           </span>
           <hr className='max-w-sm mb-6 mt-4'></hr>
