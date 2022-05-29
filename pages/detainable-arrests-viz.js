@@ -179,11 +179,11 @@ export default function Home({ posts }) {
           </div>
          
     
-      <div className='grid gap-10 grid-cols-2 '>
+      <div className='grid sm:gap-10 gap-[500px] grid-cols-2 overflow-auto sm:h-[350px]'>
             
     
             
-      <span className=' w-[650px] h-[300px] z-index-0 mb-10'>
+      <span className=' w-[650px] h-[300px]  z-index-0 mb-10 '>
       <div className="text-lg leading-7 text-gray-700 ml-[250px]">Detainable Arrests by Offense</div>
       <FirstPie data={jsonPie}  />
           </span>
@@ -215,9 +215,9 @@ export default function Home({ posts }) {
           </div>
          
     
-      <div className='grid gap-10 grid-cols-2 '>
-      <span className=' h-[250px] '>
-      <div className="text-lg leading-7 text-gray-700 ml-[210px]">Risk of New Criminal Activity</div>
+      <div className='grid sm:gap-10 gap-[500px] grid-cols-2 overflow-auto'>
+      <span className=' h-[250px] w-[492]'>
+      <span className="text-lg leading-7 text-gray-700 ml-[210px]">Risk of New Criminal Activity</span>
             <FirstBar className="z-0" data={jsonTestAsync} keyArray={["NCA Risk"]}
              indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 300 }} colorArray={['#212121']} valueFormatString={ " >-0.1~%"}
              layoutVal={"horizontal"} />
@@ -226,7 +226,7 @@ export default function Home({ posts }) {
     
             
       <span className=' w-[212px] h-[250px] z-index-0 mb-10'>
-      <div className="text-lg leading-7 text-gray-700">Risk of Failure to Appear</div>
+      <span className="text-lg leading-7 text-gray-700">Risk of Failure to Appear</span>
           <FirstBar className="z-0" data={jsonTestAsync} keyArray={["FTA Risk"]} indexArray={"Offense Type"} marginObject={{ top: 0, right: 0, bottom: 0, left: 10 }} valueFormatString={ " >-0.1~%"}
            layoutVal={"horizontal"} colorArray={['#212121']}/>
           </span>
