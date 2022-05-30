@@ -1,8 +1,8 @@
 const siteMetadata = {
   title: 'Justice Innovation Lab',
   author: 'Rory Pulvino',
-  headerTitle: 'Bond Court Reform',
-  description: 'Bond Court Reform Analysis',
+  headerTitle: 'The Case for Screening',
+  description: 'The Case for Screening',
   language: 'en-us',
   theme: 'light', // system, dark or light
   siteUrl: 'https://tailwind-nextjs-starter-blog.vercel.app',
