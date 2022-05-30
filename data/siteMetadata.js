@@ -1,6 +1,6 @@
 const siteMetadata = {
-  title: 'Loyola University of Chicago Center for Criminal Justice',
-  author: 'Don Stemen',
+  title: 'Justice Innovation Lab',
+  author: 'Rory Pulvino',
   headerTitle: 'Bond Court Reform',
   description: 'Bond Court Reform Analysis',
   language: 'en-us',
