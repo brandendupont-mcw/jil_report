@@ -6,25 +6,25 @@ import Logo from '@/data/logowhite.svg'
 export default function Footer() {
   return (
 
-  <footer class="p-4 bg-mblue text-white md:py-4 dark:bg-gray-800">
-  <div class="sm:flex sm:items-center sm:justify-between">
-  <Link href="https:/www.justiceinnovationlab.org" class="flex items-center mb-4 sm:mb-0">
+  <footer className="p-4 bg-mblue text-white md:py-4 dark:bg-gray-800">
+  <div className="sm:flex sm:items-center sm:justify-between">
+  <Link href="https:/www.justiceinnovationlab.org" className="flex items-center mb-4 sm:mb-0">
   <div className="mr-3">
                   <Logo />
                 </div>
   </Link>
-  <ul class="flex flex-wrap items-center mb-6 text-sm text-white sm:mb-0 dark:text-gray-400">
+  <ul className="flex flex-wrap items-center mb-6 text-sm text-white sm:mb-0 dark:text-gray-400">
   <li>
-  <Link href="/about" class="mr-4 hover:underline md:mr-6 ">About</Link>
+  <Link href="/about" className="mr-4 hover:underline md:mr-6 ">About</Link>
   </li>
   <li>
-  <Link href="/about" class="mr-4 hover:underline md:mr-6 ">Glossary</Link>
+  <Link href="/about" className="mr-4 hover:underline md:mr-6 ">Glossary</Link>
   </li>
   <li>
-  <a href="https://www.justiceinnovationlab.org/donate" class="mr-4 hover:underline md:mr-6 ">Donate</a>
+  <a href="https://www.justiceinnovationlab.org/donate" className="mr-4 hover:underline md:mr-6 ">Donate</a>
   </li>
   <li>
-  <a href="https://www.justiceinnovationlab.org/contact" class="hover:underline">Contact</a>
+  <a href="https://www.justiceinnovationlab.org/contact" className="hover:underline">Contact</a>
   </li>
   </ul>
   </div>
