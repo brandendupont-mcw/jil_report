@@ -3,8 +3,9 @@ import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Hero from '@/components/Hero'
+import Hero2 from '@/components/Hero2'
+import Hero3 from '@/components/Hero3'
 import { VegaLite } from 'react-vega'
-
 
 const spec = 
   {
@@ -448,33 +449,7 @@ const spec =
     }
   }
 
-const barData = {
-  table: [
-    { a: 'A', b: 28 },
-    { a: 'B', b: 55 },
-    { a: 'C', b: 43 },
-    { a: 'D', b: 91 },
-    { a: 'E', b: 81 },
-    { a: 'F', b: 53 },
-    { a: 'G', b: 19 },
-    { a: 'H', b: 87 },
-    { a: 'I', b: 52 },
-  ],
-}
 
-const barData2 = {
-  table: [
-    { a: 'A', b: 28 },
-    { a: 'B', b: 15 },
-    { a: 'C', b: 43 },
-    { a: 'D', b: 81 },
-    { a: 'E', b: 81 },
-    { a: 'F', b: 33 },
-    { a: 'G', b: 19 },
-    { a: 'H', b: 27 },
-    { a: 'I', b: 52 },
-  ],
-}
 
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
@@ -484,11 +459,12 @@ export async function getStaticProps() {
 
 export default function Home({ posts }) {
 
+  //<Hero2 />
   
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
-      <Hero />
+      <Hero3 />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
           <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">

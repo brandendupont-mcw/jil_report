@@ -1,24 +1,34 @@
 import Link from './Link'
 import siteMetadata from '@/data/siteMetadata'
 import SocialIcon from '@/components/social-icons'
+import Logo from '@/data/logowhite.svg'
 
 export default function Footer() {
   return (
-    <footer>
-      <div className="mt-16 flex flex-col items-center">
-        <div className="mb-3 flex space-x-4">
-        </div>
-        <div className="mb-2 flex space-x-2 text-sm text-gray-500 dark:text-gray-400">
-          <div>Loyola University Chicago
-Center for Criminal Justice Research</div>
-          <div>{` • `}</div>
-          <div>{`© ${new Date().getFullYear()}`}</div>
-          <div>{` • `}</div>
-          <Link href="/">Bond Court Tracker</Link>
-        </div>
-        <div className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-        </div>
-      </div>
-    </footer>
+
+  <footer class="p-4 bg-mblue text-white md:py-4 dark:bg-gray-800">
+  <div class="sm:flex sm:items-center sm:justify-between">
+  <Link href="https:/www.justiceinnovationlab.org" class="flex items-center mb-4 sm:mb-0">
+  <div className="mr-3">
+                  <Logo />
+                </div>
+  </Link>
+  <ul class="flex flex-wrap items-center mb-6 text-sm text-white sm:mb-0 dark:text-gray-400">
+  <li>
+  <Link href="/about" class="mr-4 hover:underline md:mr-6 ">About</Link>
+  </li>
+  <li>
+  <Link href="/about" class="mr-4 hover:underline md:mr-6 ">Glossary</Link>
+  </li>
+  <li>
+  <a href="https://www.justiceinnovationlab.org/donate" class="mr-4 hover:underline md:mr-6 ">Donate</a>
+  </li>
+  <li>
+  <a href="https://www.justiceinnovationlab.org/contact" class="hover:underline">Contact</a>
+  </li>
+  </ul>
+  </div>
+  </footer>
+
   )
 }
