@@ -25,8 +25,8 @@ const Hero3 = () => {
         <div className="lg:pt-24">
             <div className="relative w-full h-64 sm:h-96 lg:rounded lg:h-[500px]">
                 
-        <Image src="/static/images/jil_test_image.png" alt=""
-        className='lg:rounded-tl-3xl absolute inset-0 object-cover' title="" width="100%" height="100%" layout="responsive" />
+        <Image src={'/static/images/jil_test_image.png'} alt="image of jil meeting"
+        className='lg:rounded-tl-3xl absolute inset-0 object-cover' title="" width={"100%"} height={"100%"} layout="responsive" />
 
             </div>
         </div>
