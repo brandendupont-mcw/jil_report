@@ -6,16 +6,23 @@ import Hero from '@/components/Hero'
 import Hero2 from '@/components/Hero2'
 import Hero3 from '@/components/Hero3'
 import TOCSide from '@/components/tocSide'
+import dynamic from 'next/dynamic';
+
+// charting libraries
 import { VegaLite } from 'react-vega'
+//import Plot from 'react-plotly.js';
+const Plot = dynamic(() => import('react-plotly.js'), { ssr: false });
+
+//import popover and tab components
+import PopOver from '@/components/PopOver'
 import MyTab from '@/components/MyTab'
 
 //get json for the charts
 import sol9 from '@/data/viz/sol9';
 import berkely from '@/data/viz/berkely.json';
 import charleston from '@/data/viz/charleston.json'
-import PopOver from '@/components/PopOver'
 
-// popper test
+
 
 
 
@@ -486,6 +493,8 @@ const spec =
 
 
 
+
+
 export async function getStaticProps() {
   const posts = await getAllFilesFrontMatter('blog')
 
@@ -536,12 +545,38 @@ export default function Home({ posts }) {
 
           </div>
 
+
           
           <section id="open-cases">
 
           <MyTab categoriesObject={testCategories} />
+
+          <VegaLite  spec={sol9}  />
+
+
           </section>
-          <section id="blog">Section 3</section>
+
+          <section id="blog">
+            <div>
+
+
+          <Plot
+              data={[
+          {
+            x: [1, 2, 3],
+            y: [2, 6, 3],
+            type: 'scatter',
+            mode: 'lines+markers',
+            marker: {color: 'red'},
+          },
+          {type: 'bar', x: [1, 2, 3], y: [2, 5, 3]},
+        ]}
+        layout={{width: 320, height: 240, title: 'A Fancy Plot'}}
+      />
+      </div>
+          
+          
+          </section>
           <section id="contact">Section 4</section>
 
 
