@@ -1,4 +1,3 @@
-import Map from "./Map";
 import Link from 'next/link'
 import Image from './Image'
 

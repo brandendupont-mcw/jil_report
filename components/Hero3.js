@@ -1,5 +1,3 @@
-import Map from "./Map";
-import Link from 'next/link'
 import Image from './Image'
 
 
@@ -25,12 +23,11 @@ const Hero3 = () => {
         </div>
 
         <div className="lg:pt-24">
-            <div className="relative w-full h-64 sm:h-96 lg:h-[500px]">
-            <img
-                className="absolute inset-0 object-cover w-full h-full lg:rounded-tl-3xl"
-                src="/static/images/jil_test_image.png"
-                alt=""
-            />
+            <div className="relative w-full h-64 sm:h-96 lg:rounded lg:h-[500px]">
+                
+        <Image src="/static/images/jil_test_image.png" alt=""
+        className='lg:rounded-tl-3xl absolute inset-0 object-cover' title="" width="100%" height="100%" layout="responsive" />
+
             </div>
         </div>
         </aside>
