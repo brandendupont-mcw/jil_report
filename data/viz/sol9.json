@@ -114,7 +114,7 @@
             "groupby": ["DaysOpenGroup", "Race"]
           }
         ],
-        "width": 730
+        "width": 720
       },
       {
         "mark": {"type": "text", "dx": 20},

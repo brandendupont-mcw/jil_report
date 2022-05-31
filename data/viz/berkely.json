@@ -1,5 +1,4 @@
 {
-  "width": 685,
   "height": 385,
   "config": {
     "background": "#fbfbfb",
@@ -116,7 +115,7 @@
             "groupby": ["DaysOpenGroup", "Race"]
           }
         ],
-        "width": 750
+        "width": 650
       },
       {
         "mark": {"type": "text", "dx": 20},
@@ -146,7 +145,7 @@
             "groupby": ["DaysOpenGroup", "Race"]
           }
         ],
-        "width": 730
+        "width": 720
       }
     ]
   },

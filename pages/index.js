@@ -7,18 +7,21 @@ import Hero2 from '@/components/Hero2'
 import Hero3 from '@/components/Hero3'
 import TOCSide from '@/components/tocSide'
 import { VegaLite } from 'react-vega'
-import { useState } from 'react'
-import { Tab } from '@headlessui/react'
+import MyTab from '@/components/MyTab'
 
 //get json for the charts
 import sol9 from '@/data/viz/sol9';
 import berkely from '@/data/viz/berkely.json';
 import charleston from '@/data/viz/charleston.json'
+import PopOver from '@/components/PopOver'
+
+// popper test
 
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(' ')
-}
+
+
+
+
 
 const testCategories = {
 
@@ -38,61 +41,6 @@ const testCategories = {
     },
   ],
 }
-
-function MyTab({categoriesObject}) {
-
-  let [categories] = useState(categoriesObject)
-
-  return (
-    <div className="w-full max-w-md px-2 py-6 mb-2 sm:px-0">
-      <Tab.Group>
-        <Tab.List className="flex space-x-1 rounded-xl bg-mblue p-1 mb-8">
-          {Object.keys(categories).map((category) => (
-            <Tab
-              key={category}
-              className={({ selected }) =>
-                classNames(
-                  'w-full rounded-lg py-2.5 text-xs font-medium leading-5 text-white',
-                  'ring-white ring-opacity-90 ring-offset-2 ring-offset-mblue focus:outline-none focus:ring-2',
-                  selected
-                    ? 'bg-white shadow text-mblue'
-                    : 'text-white hover:bg-white/[0.12] hover:text-white'
-                )
-              }
-            >
-              {category}
-            </Tab>
-          ))}
-        </Tab.List>
-        <Tab.Panels className="mt-2">
-          {Object.values(categories).map((posts, idx) => (
-            <Tab.Panel
-              key={idx}
-              className={classNames(
-              )}
-            >
-              <ul>
-                {posts.map((post) => (
-                  <li
-                    key={post.id}
-                    className=""
-                  >
-                    <div  className="">
-                      {post.viz}
-                    </div>
-
-
-                  </li>
-                ))}
-              </ul>
-            </Tab.Panel>
-          ))}
-        </Tab.Panels>
-      </Tab.Group>
-    </div>
-  )
-}
-
 
 
 const spec = 
@@ -554,26 +502,47 @@ export default function Home({ posts }) {
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <Hero3 />
-      <div id="test1" className="divide-y  divide-gray-200 dark:divide-gray-700">
+      <div id="test1" className="grid divide-y place-items-center  divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <TOCSide />
+        <TOCSide />
 
 
-          <div id="test1">
+          <div id="introduction" className=' space-y-6 space-x-2 max-w-3xl'>
           
-          <div className='max-w-3xl'>
+          <h2 className='text-5xl '>
+          Introduction
+          </h2>
 
-          <VegaLite  spec={sol9}  />
+          
+          <p className=''>
+          No matter how equally prosecutors treat people, racial disproportionalities in policing will lead to disproportionalities in who is charged, convicted, and incarcerated.<PopOver popoverText={"This likely significantly overestimates the amount stolen, as we assume for this calculation that all thefts are for the maximum amount."} /> Data demonstrate disproportionate rates of arrest for Black individuals in Charleston, South Carolina, that cannot be explained by different rates of criminal conduct alone, particularly with regard to drug charges.
+          </p>
+
+          <p>
+          The data also reveal that at least some arrest disproportionality is driven by arrests on cases with insufficient evidence or that otherwise fail to meet evidentiary standards. Prosecutors have the power to address these disproportionalities through evidentiary reviews and assessments of the value of prosecution to the community.
+          </p>
+
+          <p>
+          The Ninth Circuit Solicitor's Office (SOL9) and Justice Innovation Lab (JIL) worked together to analyze case trends and develop a data-informed approach to improving outcomes through prosecutorial screening. This report summarizes major findings from these analyses, discusses results from a pilot screening unit, and provides recommendations for future case screening work.
+          </p>
+
+
+        <p>
+        A case screening process, where charges referred for prosecution receive a preliminary review, can be used to identify cases for quicker disposition and improve outcomes for arrestees, prosecutors, and the local community. Case screening enables prosecutors to quickly dismiss charges that fail to meet evidentiary standards of proof and identify cases that could be better resolved with alternatives to prosecution, such as diversion. Timely dismissals reduce the negative impact on arrestees of prolonged disposition times and can improve public safety by allowing prosecutors to prioritize the most serious charges. Case screening is particularly urgent given significant backlogs exacerbated by the COVID-19 pandemic. As of December 2021, there were 13,915 total undisposed General Sessions Court cases in Charleston and Berkeley Counties (Figure 1). Without intervention, it is predicted that on average, it will take (tbd) years to resolve a typical case.
+        </p>
+        
+      
+        
+
           </div>
+
+          
+          <section id="open-cases">
 
           <MyTab categoriesObject={testCategories} />
-
-          </div>
-
-          
-          <section id="projects">PROJECTS</section>
-          <section id="blog">BLOG</section>
-          <section id="contact">CONTACT ME</section>
+          </section>
+          <section id="blog">Section 3</section>
+          <section id="contact">Section 4</section>
 
 
         </div>
