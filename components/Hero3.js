@@ -9,7 +9,7 @@ const Hero3 = () => {
 
     return (
         <aside
-        className="overflow-hidden text-white lg:grid bg-gradient-to-r from-mblue to-mblue lg:grid-cols-2 lg:items-center"
+        className="overflow-hidden text-white lg:grid bg-gradient-to-r from-mblue to-mblue lg:grid-cols-2 lg:items-center mb-32"
         >
         <div className="p-12 text-center sm:p-14 lg:p-14 lg:text-left">
             <div className="max-w-lg mx-auto lg:ml-0 lg:pt-12">

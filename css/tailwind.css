@@ -23,3 +23,9 @@ input:-webkit-autofill,
 input:-webkit-autofill:focus {
   transition: background-color 600000s 0s, color 600000s 0s;
 }
+
+.active {
+  font-weight: bold;
+  color:#6DC6DA;
+  text-decoration: underline;
+}

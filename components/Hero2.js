@@ -3,7 +3,9 @@ import Link from 'next/link'
 import Image from './Image'
 
 
-const Hero = () => {
+
+
+const Hero2 = () => {
 
 
 
@@ -39,4 +41,4 @@ const Hero = () => {
     );
   };
 
-export default Hero
+export default Hero2

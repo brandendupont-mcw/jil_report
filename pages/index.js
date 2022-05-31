@@ -1,16 +1,103 @@
-import Link from '@/components/Link'
+//import Link from '@/components/Link'
 import { PageSEO } from '@/components/SEO'
 import siteMetadata from '@/data/siteMetadata'
 import { getAllFilesFrontMatter } from '@/lib/mdx'
 import Hero from '@/components/Hero'
 import Hero2 from '@/components/Hero2'
 import Hero3 from '@/components/Hero3'
+import TOCSide from '@/components/tocSide'
 import { VegaLite } from 'react-vega'
+import { useState } from 'react'
+import { Tab } from '@headlessui/react'
+
+//get json for the charts
+import sol9 from '@/data/viz/sol9';
+import berkely from '@/data/viz/berkely.json';
+import charleston from '@/data/viz/charleston.json'
+
+
+function classNames(...classes) {
+  return classes.filter(Boolean).join(' ')
+}
+
+const testCategories = {
+
+  "All Sol9": [
+    {
+      viz: <VegaLite  spec={sol9}  />  ,
+    },
+  ],
+  "Charleston County": [
+    {
+      viz: <VegaLite  spec={charleston}  />  ,
+    },
+  ],
+  "Berkeley County": [
+    {
+      viz: <VegaLite  spec={berkely}  />  ,
+    },
+  ],
+}
+
+function MyTab({categoriesObject}) {
+
+  let [categories] = useState(categoriesObject)
+
+  return (
+    <div className="w-full max-w-md px-2 py-6 mb-2 sm:px-0">
+      <Tab.Group>
+        <Tab.List className="flex space-x-1 rounded-xl bg-mblue p-1 mb-8">
+          {Object.keys(categories).map((category) => (
+            <Tab
+              key={category}
+              className={({ selected }) =>
+                classNames(
+                  'w-full rounded-lg py-2.5 text-xs font-medium leading-5 text-white',
+                  'ring-white ring-opacity-90 ring-offset-2 ring-offset-mblue focus:outline-none focus:ring-2',
+                  selected
+                    ? 'bg-white shadow text-mblue'
+                    : 'text-white hover:bg-white/[0.12] hover:text-white'
+                )
+              }
+            >
+              {category}
+            </Tab>
+          ))}
+        </Tab.List>
+        <Tab.Panels className="mt-2">
+          {Object.values(categories).map((posts, idx) => (
+            <Tab.Panel
+              key={idx}
+              className={classNames(
+              )}
+            >
+              <ul>
+                {posts.map((post) => (
+                  <li
+                    key={post.id}
+                    className=""
+                  >
+                    <div  className="">
+                      {post.viz}
+                    </div>
+
+
+                  </li>
+                ))}
+              </ul>
+            </Tab.Panel>
+          ))}
+        </Tab.Panels>
+      </Tab.Group>
+    </div>
+  )
+}
+
+
 
 const spec = 
   {
-    "width": 300,
-    "height": 200,
+    "width": 200,
     "config": {
       "background": "#fbfbfb",
       "title": {
@@ -460,17 +547,34 @@ export async function getStaticProps() {
 export default function Home({ posts }) {
 
   //<Hero2 />
+
+
   
   return (
     <>
       <PageSEO title={siteMetadata.title} description={siteMetadata.description} />
       <Hero3 />
-      <div className="divide-y divide-gray-200 dark:divide-gray-700">
+      <div id="test1" className="divide-y  divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pt-6 pb-8 md:space-y-5">
-          <p className="text-lg leading-7 text-gray-500 dark:text-gray-400">
-            {siteMetadata.description}
-          </p>
-          <VegaLite spec={spec}  />
+          <TOCSide />
+
+
+          <div id="test1">
+          
+          <div className='max-w-3xl'>
+
+          <VegaLite  spec={sol9}  />
+          </div>
+
+          <MyTab categoriesObject={testCategories} />
+
+          </div>
+
+          
+          <section id="projects">PROJECTS</section>
+          <section id="blog">BLOG</section>
+          <section id="contact">CONTACT ME</section>
+
 
         </div>
       </div>

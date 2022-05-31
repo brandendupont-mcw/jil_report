@@ -1,0 +1,261 @@
+{
+  "width": 685,
+  "height": 385,
+  "config": {
+    "background": "#fbfbfb",
+    "title": {
+      "color": "#003057",
+      "fontSize": 18,
+      "anchor": "start",
+      "align": "left",
+      "subtitleColor": "#003057",
+      "subtitleFontSize": 14
+    },
+    "axis": {
+      "grid": false,
+      "titleColor": "#003057",
+      "titleFontSize": 13,
+      "titleAngle": 0,
+      "labelColor": "#5e667d",
+      "labelFontSize": 12,
+      "labelAngle": 0,
+      "labelLimit": 1000,
+      "tickColor": "#5e667d",
+      "tickWidth": 0.5,
+      "domainColor": "#5e667d",
+      "domainWidth": 0.5
+    },
+    "axisY": {"title": "", "domain": false, "ticks": false, "labelPadding": 15},
+    "legend": {
+      "direction": "horizontal",
+      "orient": "top",
+      "titleColor": "#003057",
+      "labelColor": "#003057",
+      "labelFontSize": 12,
+      "padding": 5
+    },
+    "header": {
+      "labelColor": "#003057",
+      "labelFontSize": 13,
+      "labelAngle": 0,
+      "title": ""
+    },
+    "range": {
+      "category": ["#19a7a4", "#1941a6", "#9b9fa8"],
+      "diverging": ["#1941a6", "#fbfbfb", "#19a7a4"],
+      "heatmap": [
+        "#e6f5f5",
+        "#ccebeb",
+        "#b3e2e1",
+        "#99d8d7",
+        "#80cecd",
+        "#66c4c2",
+        "#4dbab8",
+        "#33b1ae",
+        "#19a7a4",
+        "#008d8b",
+        "#007e7b",
+        "#006e6c",
+        "#005e5c"
+      ]
+    },
+    "mark": {"color": "#19a7a4"},
+    "view": {"stroke": "transparent"},
+    "text": {
+      "color": "#5e667d",
+      "fontSize": 13,
+      "align": "center",
+      "baseline": "middle"
+    },
+    "bar": {},
+    "point": {"fill": "", "opacity": 0.8, "size": 50},
+    "circle": {"opacity": 1, "size": 50},
+    "rect": {"tickSize": 0},
+    "line": {"strokeWidth": 3}
+  },
+  "data": {"name": "data-7bbc1885ea36e5844c920e69b122e14b"},
+  "facet": {
+    "row": {
+      "type": "nominal",
+      "field": "DaysOpenGroup",
+      "header": {"labelAlign": "left"},
+      "sort": [
+        "<3 months",
+        "3-6 months",
+        "6-12 months",
+        "1-2 years",
+        "2-3 years",
+        "3-4 years",
+        "4-5 years"
+      ],
+      "title": ""
+    }
+  },
+  "spec": {
+    "layer": [
+      {
+        "mark": {"type": "bar", "opacity": 0.8},
+        "encoding": {
+          "color": {
+            "type": "nominal",
+            "field": "Race",
+            "title": "Arrestee Race"
+          },
+          "x": {
+            "type": "quantitative",
+            "axis": {"tickMinStep": 500},
+            "field": "case_count",
+            "title": "Open Cases"
+          },
+          "y": {"type": "nominal", "axis": {"labels": false}, "field": "Race"}
+        },
+        "height": 50,
+        "transform": [
+          {
+            "aggregate": [{"op": "sum", "field": "CaseId", "as": "case_count"}],
+            "groupby": ["DaysOpenGroup", "Race"]
+          }
+        ],
+        "width": 750
+      },
+      {
+        "mark": {"type": "text", "dx": 20},
+        "encoding": {
+          "color": {
+            "type": "nominal",
+            "field": "Race",
+            "title": "Arrestee Race"
+          },
+          "text": {
+            "type": "quantitative",
+            "field": "case_count",
+            "format": ","
+          },
+          "x": {
+            "type": "quantitative",
+            "axis": {"tickMinStep": 500},
+            "field": "case_count",
+            "title": "Open Cases"
+          },
+          "y": {"type": "nominal", "axis": {"labels": false}, "field": "Race"}
+        },
+        "height": 50,
+        "transform": [
+          {
+            "aggregate": [{"op": "sum", "field": "CaseId", "as": "case_count"}],
+            "groupby": ["DaysOpenGroup", "Race"]
+          }
+        ],
+        "width": 730
+      }
+    ]
+  },
+  "title": {
+    "text": ["Number Of Open Cases By Length Of Time Case Has Been Pending"],
+    "subtitle": ["As of December 2021, arrests from 2017-2021"],
+    "dx": 85
+  },
+  "$schema": "https://vega.github.io/schema/vega-lite/v4.8.1.json",
+  "datasets": {
+    "data-7bbc1885ea36e5844c920e69b122e14b": [
+      {
+        "DaysOpenGroup": "1-2 years",
+        "Race": "Black",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 642,
+        "WarrantNumber": 1078
+      },
+      {
+        "DaysOpenGroup": "1-2 years",
+        "Race": "White",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 949,
+        "WarrantNumber": 1475
+      },
+      {
+        "DaysOpenGroup": "2-3 years",
+        "Race": "Black",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 444,
+        "WarrantNumber": 725
+      },
+      {
+        "DaysOpenGroup": "2-3 years",
+        "Race": "White",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 590,
+        "WarrantNumber": 915
+      },
+      {
+        "DaysOpenGroup": "3-4 years",
+        "Race": "Black",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 199,
+        "WarrantNumber": 333
+      },
+      {
+        "DaysOpenGroup": "3-4 years",
+        "Race": "White",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 258,
+        "WarrantNumber": 429
+      },
+      {
+        "DaysOpenGroup": "3-6 months",
+        "Race": "Black",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 190,
+        "WarrantNumber": 291
+      },
+      {
+        "DaysOpenGroup": "3-6 months",
+        "Race": "White",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 292,
+        "WarrantNumber": 422
+      },
+      {
+        "DaysOpenGroup": "4-5 years",
+        "Race": "Black",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 106,
+        "WarrantNumber": 196
+      },
+      {
+        "DaysOpenGroup": "4-5 years",
+        "Race": "White",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 83,
+        "WarrantNumber": 146
+      },
+      {
+        "DaysOpenGroup": "6-12 months",
+        "Race": "Black",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 407,
+        "WarrantNumber": 631
+      },
+      {
+        "DaysOpenGroup": "6-12 months",
+        "Race": "White",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 592,
+        "WarrantNumber": 896
+      },
+      {
+        "DaysOpenGroup": "<3 months",
+        "Race": "Black",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 188,
+        "WarrantNumber": 329
+      },
+      {
+        "DaysOpenGroup": "<3 months",
+        "Race": "White",
+        "Jurisdiction": "Berkeley",
+        "CaseId": 252,
+        "WarrantNumber": 374
+      }
+    ]
+  }
+}

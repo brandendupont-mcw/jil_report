@@ -2,10 +2,12 @@ import { useState } from 'react'
 import Link from './Link'
 import headerNavLinks from '@/data/headerNavLinks'
 
+
 const MobileNav = () => {
   const [navShow, setNavShow] = useState(false)
 
   const onToggleNav = () => {
+
     setNavShow((status) => {
       if (status) {
         document.body.style.overflow = 'auto'

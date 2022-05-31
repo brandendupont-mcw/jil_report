@@ -6,9 +6,12 @@ import SectionContainer from './SectionContainer'
 import Footer from './Footer'
 import MobileNav from './MobileNav'
 
+
 const LayoutWrapper = ({ children }) => {
   return (
+    
     <SectionContainer>
+
       <div className="flex h-screen flex-col justify-between">
         <header className="flex items-center justify-between py-10">
           <div>
